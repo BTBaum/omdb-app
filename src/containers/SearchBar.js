@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { fetchMovies } from '../actions/index'
 
 class SearchBar extends Component {
   constructor(props) {
     super(props)
     this.state = { term: '' }
     this.onInputChange = this.onInputChange.bind(this)
-    // this.onSubmit = this.onSubmit.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
   }
 
   onInputChange(event) {
@@ -14,7 +17,8 @@ class SearchBar extends Component {
 
   onSubmit(event) {
     event.preventDefault()
-    
+    this.props.fetchMovies(this.state.term)
+    this.setState({ term: '' })
   }
 
   render() {
@@ -26,7 +30,7 @@ class SearchBar extends Component {
         <input 
           className="form-control mr-2" 
           type="search" 
-          placeholder="Search"
+          placeholder="Search movie title"
           onChange={this.onInputChange}
           value={this.state.term}
         />
@@ -41,4 +45,8 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ fetchMovies }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar)
