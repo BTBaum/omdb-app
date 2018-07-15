@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from './Header'
-import SearchBar from '../containers/SearchBar'
+import SearchForm from '../containers/SearchForm'
 import Table from '../containers/Table'
 
 const styles = {
@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div className="container-fluid m-0 p-0" style={styles.app}>
         <Header />
-        <SearchBar />
+        <SearchForm />
         <Table />
       </div>
     );
