@@ -1,9 +1,7 @@
 import axios from 'axios'
 
-const OMDB_API = process.env.REACT_OMDB_API
-
-// const API_KEY = "9f572b90"
-// const OMDB_API = `http://www.omdbapi.com/?apikey=${API_KEY}`
+const API_KEY = "9f572b90"
+const OMDB_API = `http://www.omdbapi.com/?apikey=${API_KEY}`
 
 export const FETCH_MOVIES = 'FETCH_MOVIES'
 
