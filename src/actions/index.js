@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const API_KEY = "9f572b90"
-const OMDB_API = `http://www.omdbapi.com/?apikey=${API_KEY}`
+const OMDB_API = `https://www.omdbapi.com/?apikey=${API_KEY}`
 
 export const FETCH_MOVIES = 'FETCH_MOVIES'
 
