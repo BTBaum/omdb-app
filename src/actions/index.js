@@ -10,8 +10,12 @@ export const FETCH_MOVIES = 'FETCH_MOVIES'
 export const fetchMovies = (movie) => {
   const url = `${OMDB_API}&s=${movie}`
   const request = axios.get(url)
-  return {
-    type: FETCH_MOVIES,
-    payload: request
-  }
+  return(dispatch) => {
+    request.then(({ data: { Search } }) => {
+      dispatch({ 
+        type: FETCH_MOVIES, 
+        payload: Search 
+      })
+    })
+  } 
 }

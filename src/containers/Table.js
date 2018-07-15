@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class Table extends Component {
-
+  
   renderMovies({ Poster, Title, Type, Year, imdbID }) {
     return (
       <tr key={ imdbID }>
@@ -31,13 +31,12 @@ class Table extends Component {
         </thead>
         <tbody>
           { 
-            this.props.movies.length >= 1 
-            ? 
-            this.props.movies[0].Search.map(this.renderMovies) 
-            :
-            <tr>
-              <td>Please search for a movie</td>
-            </tr>
+            this.props.movies.length === 0 ? 
+              <tr><td>Please enter a search term</td></tr> : 
+              ( this.props.movies[0] ? 
+                  this.props.movies[0].map(this.renderMovies) : 
+                  <tr><td>Movie not found</td></tr> 
+              )
           }
         </tbody>
       </table>
