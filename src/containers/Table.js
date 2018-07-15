@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+const styles = {
+  table: {
+    width: "90vw",
+    margin: "0 auto"
+  }
+}
+
 class Table extends Component {
   
   renderMovies({ Poster, Title, Type, Year, imdbID }) {
@@ -19,8 +26,8 @@ class Table extends Component {
 
   render() {
     return (
-      <table className="table">
-        <thead className="thead-dark bg-info">
+      <table className="table" style={styles.table}>
+        <thead className="bg-info">
           <tr>
             <th>Poster</th>
             <th>Titile</th>
@@ -32,7 +39,7 @@ class Table extends Component {
         <tbody>
           { 
             this.props.movies.length === 0 ? 
-              <tr><td>Please enter a search term</td></tr> : 
+              <tr><td>Please enter a movie search term</td></tr> : 
               ( this.props.movies[0] ? 
                   this.props.movies[0].map(this.renderMovies) : 
                   <tr><td>Movie not found</td></tr> 

@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-// In a production app I would have environment variable API key and URLs
-const API_KEY = "9f572b90"
-const OMDB_API = `http://www.omdbapi.com/?apikey=${API_KEY}`
-const POSTER_API = `http://img.omdbapi.com/?apikey=${API_KEY}`
+const OMDB_API = process.env.REACT_OMDB_API
+
+// const API_KEY = "9f572b90"
+// const OMDB_API = `http://www.omdbapi.com/?apikey=${API_KEY}`
 
 export const FETCH_MOVIES = 'FETCH_MOVIES'
 

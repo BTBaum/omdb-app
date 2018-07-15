@@ -31,7 +31,7 @@ class SearchForm extends Component {
     const { handleSubmit } = this.props
     return (
       <form 
-        className="d-flex flex-row col-sm-6 my-5 mx-3" 
+        className="d-flex flex-row col-sm-6 my-5 mx-5" 
         onSubmit={handleSubmit(this.onSubmit.bind(this))}
       >
         <Field 
@@ -40,7 +40,7 @@ class SearchForm extends Component {
           component={this.renderTermField} 
         />
         <button 
-          className="btn btn-outline-info align-self-start" 
+          className="btn btn-outline-info align-self-start mx-2" 
           type="submit"
         >
           Search

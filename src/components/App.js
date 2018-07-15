@@ -6,7 +6,7 @@ import Table from '../containers/Table'
 class App extends Component {
   render() {
     return (
-      <div className="container-fluid m-0 p-0 text-white">
+      <div className="container-fluid m-0 p-0 text-white font-weight-light">
         <Header />
         <SearchForm />
         <Table />
