@@ -1,5 +1,5 @@
 ## Run local
-To run the Avoxi Skill Test by Brandon Baum run from the root directory
+To run the OMDB app by Brandon Baum run from the root directory
 - $ yarn install
 - $ yarn start
 
